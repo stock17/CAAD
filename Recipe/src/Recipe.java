@@ -1,6 +1,8 @@
 /**
  * Created by Yury on 22.02.2017.
  */
+
+
 import java.io.*;
 import java.util.*;
 
@@ -15,14 +17,16 @@ public class Recipe {
     public static void saveFavouriteToFile() throws  IOException{
 
         ObjectOutputStream oos = null;
+        FileOutputStream fos = null;
 
         try {
-            oos = new ObjectOutputStream(new FileOutputStream("src\\favorite_recipe.txt"));
-            oos.writeObject((Recipe)Recipe.favourite);
-
+            //oos = new ObjectOutputStream(new FileOutputStream("src\\favorite_recipe.txt"));
+            fos = new FileOutputStream("src\\favorite_recipe.txt");
+            fos.write(Recipe.favourite.name.getBytes());
         } finally {
 
             if (oos != null) oos.close();
+            if (fos != null) fos.close();
         }
 
     }
@@ -91,6 +95,7 @@ public class Recipe {
         // Second Exercise
 
         Recipe.favourite = recipeList.get(0);
+
         Recipe.saveFavouriteToFile();
 
 
