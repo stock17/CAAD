@@ -81,16 +81,16 @@ public class Main {
         System.out.println("\tDessert");
         desserts.forEach(System.out::println);
 
-        System.out.println("Combos with Special Discount:");
+        System.out.println("\n\nCombos with Special Discount:\n");
 
-        /*for (int i = 0; i < 20; i++){
+        for (int i = 0; i < 20; i++){
             Random generator = new Random();
             MainDish md = maindishes.get(generator.nextInt(maindishes.size()));
             Drink dr = drinks.get(generator.nextInt(drinks.size()));
             Dessert ds = desserts.get(generator.nextInt(desserts.size()));
             Combo cmb = new Combo(md, dr, ds);
             System.out.println(cmb);
-        }*/
+        }
 
 
 
@@ -154,22 +154,34 @@ class Dessert extends Food {
 class Combo {
     //Combine Main Dish, Drink, Dessert
     private double ComboPrice;
-    public Combo( MainDish md, Drink dr, Dessert ds) {
 
+    private MainDish md;
+    private Drink dr;
+    private Dessert ds;
+
+    public Combo( MainDish md, Drink dr, Dessert ds) {
+        this.md = md;
+        this.dr = dr;
+        this.ds = ds;
     }
 
     private double calculateComboPrice(){
-        return 0.00;
+
+        double price = md.getPrice() + dr.getPrice() + ds.getPrice();
+        double discount = calculateComboDiscount();
+        double endprice = price - discount;
+        return Math.round(endprice * 100) / 100.00;
+
     }
 
     private double calculateComboDiscount(){
         Random generator = new Random();
-        double discount = generator.nextDouble() * 5;
-        discount = Math.round(discount * 100) / 100.00;
-        return discount;
+        return generator.nextDouble() * 5;
+
     }
 
-    public String toString(){
-        return "";
-    };
+    public String toString() {
+
+        return "\t" + md.getName() + " + " + dr.getName() + " + " + ds.getName() + "\n\t\t$" + calculateComboPrice();
+    }
 }
