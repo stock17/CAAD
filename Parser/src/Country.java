@@ -33,6 +33,7 @@ public class Country {
     }
 
     public String getReportRow() {
-        return name + ", " + region + ", " + incomeLevel + ", " + lifeExpectancy + "\n";
+        //return name + ", " + region + ", " + incomeLevel + ", " + lifeExpectancy + "\n";
+        return name + "\n";
     }
 }

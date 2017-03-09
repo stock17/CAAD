@@ -9,7 +9,7 @@ public class Countries {
     }
 
     public void addCountry(String name, String iso2code) {
-
+        countries.add(new Country(name, iso2code));
     }
 
     public int getCountryByIso2Code(String iso2code) {
@@ -29,6 +29,12 @@ public class Countries {
     }
 
     public String report() {
-        return null;
+
+        StringBuilder result = new StringBuilder();
+        for (Country c: countries){
+            result.append(c.getReportRow());
+        }
+
+        return result.toString();
     }
 }

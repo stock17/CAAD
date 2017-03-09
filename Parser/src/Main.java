@@ -14,8 +14,9 @@ public class Main {
         String countries_xml = InternetContent.get(url_countries_info);
         String life_expectancy_xml = InternetContent.get(url_countries_life_expectancy);
         Countries countries = new Countries();
-        /*CountriesJSONParser.setCountries(countries,countries_txt);
-        CountriesSAXParser.setWorldBankData(countries,countries_xml);
+
+        CountriesJSONParser.setCountries(countries,countries_txt);
+        /*CountriesSAXParser.setWorldBankData(countries,countries_xml);
         CountriesDOMParser.setLifeExpectancy(countries,life_expectancy_xml);*/
         System.out.println(countries_txt);
     }
