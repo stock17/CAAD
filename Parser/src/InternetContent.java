@@ -4,7 +4,7 @@ import java.net.*;
 public class InternetContent {
     public static String get(String url) {
 
-        StringBuilder sb = null;
+        StringBuilder sb = new StringBuilder();
         BufferedReader buff = null;
 
         try {
@@ -13,7 +13,7 @@ public class InternetContent {
             String str = "";
 
             while ((str = buff.readLine()) != null)
-                sb.append(str);
+                sb.append(str).append("\n");
 
 
         } catch (IOException ez) {

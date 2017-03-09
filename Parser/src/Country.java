@@ -7,29 +7,32 @@ public class Country {
 
     public Country(String name,String iso2code) {
         //Complete the constructor
+        this.name = name;
+        this.iso2code = iso2code;
     }
 
     public String getName() {
-        return null;
+        return name;
     }
 
     public String getIso2Code() {
-        return null;
+        return iso2code;
     }
 
     public void setRegion(String region) {
-
+        this.region = region;
     }
 
     public void setIncomeLevel(String incomeLevel) {
+        this.incomeLevel = incomeLevel;
 
     }
 
     public void setLifeExpectancy(Double lifeExpectancy) {
-
+        this.lifeExpectancy = lifeExpectancy;
     }
 
     public String getReportRow() {
-        return null;
+        return name + ", " + region + ", " + incomeLevel + ", " + lifeExpectancy + "\n";
     }
 }
