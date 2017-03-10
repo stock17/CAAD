@@ -13,6 +13,7 @@ public class Main {
         String countries_txt = InternetContent.get(url_countries);
         String countries_xml = InternetContent.get(url_countries_info);
         String life_expectancy_xml = InternetContent.get(url_countries_life_expectancy);
+<<<<<<< HEAD
 
         System.out.println(countries_txt);
         System.out.println(countries_xml);
@@ -22,5 +23,13 @@ public class Main {
         CountriesJSONParser.setCountries(countries,countries_txt);
         CountriesSAXParser.setWorldBankData(countries,countries_xml);
         CountriesDOMParser.setLifeExpectancy(countries,life_expectancy_xml);*/
+=======
+        Countries countries = new Countries();
+
+        CountriesJSONParser.setCountries(countries,countries_txt);
+        /*CountriesSAXParser.setWorldBankData(countries,countries_xml);
+        CountriesDOMParser.setLifeExpectancy(countries,life_expectancy_xml);*/
+        System.out.println(countries_txt);
+>>>>>>> a9ee8b81319b3d4f5b30d6997635037360af1608
     }
 }
