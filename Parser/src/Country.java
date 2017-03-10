@@ -20,6 +20,8 @@ public class Country {
         return iso2code;
     }
 
+    public String getRegion() { return this.region; }
+
     public void setRegion(String region) {
         this.region = region;
     }
