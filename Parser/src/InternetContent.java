@@ -4,16 +4,17 @@ import java.net.*;
 public class InternetContent {
     public static String get(String url) {
 
-        StringBuilder sb = null;
+        StringBuilder sb = new StringBuilder();
         BufferedReader buff = null;
 
         try {
             URL myUrl = new URL(url);
             buff = new BufferedReader(new InputStreamReader(myUrl.openStream()));
-            String str = "";
+            String str = new String();
 
             while ((str = buff.readLine()) != null)
-                sb.append(str);
+                sb.append(str).append("\n");
+
 
 
         } catch (IOException ez) {
