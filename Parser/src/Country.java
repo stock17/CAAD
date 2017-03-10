@@ -9,6 +9,7 @@ public class Country {
         //Complete the constructor
         this.name = name;
         this.iso2code = iso2code;
+
     }
 
     public String getName() {
@@ -33,7 +34,12 @@ public class Country {
     }
 
     public String getReportRow() {
-        //return name + ", " + region + ", " + incomeLevel + ", " + lifeExpectancy + "\n";
-        return name + "\n";
+        if (region == null) region = " - ";
+        if (incomeLevel == null) incomeLevel = " - ";
+        if (lifeExpectancy != null)
+            return name + ", " + region + ", " + incomeLevel + ", " + lifeExpectancy + "\n";
+        else
+            return name + ", " + region + ", " + incomeLevel + ", " + " - " + "\n";
+
     }
 }

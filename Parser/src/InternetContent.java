@@ -13,7 +13,7 @@ public class InternetContent {
             String str = new String();
 
             while ((str = buff.readLine()) != null)
-                sb.append(str).append("\n");
+                sb.append(str.trim());
 
 
 

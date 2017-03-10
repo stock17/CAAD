@@ -13,7 +13,7 @@ public class CountriesJSONParser {
         for(JsonValue jv: ja){
             JsonObject temp = (JsonObject) jv;
             String name = temp.getString("name");
-            String code = temp.getString("alpha2code");
+            String code = temp.getString("alpha2_code");
             countries.addCountry(name, code);
         }
 
