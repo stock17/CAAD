@@ -12,14 +12,13 @@ public class Main {
 
         String countries_txt = InternetContent.get(url_countries);
         String countries_xml = InternetContent.get(url_countries_info);
-        //    System.out.println(countries_xml);
         String life_expectancy_xml = InternetContent.get(url_countries_life_expectancy);
 
         Countries countries = new Countries();
 
         CountriesJSONParser.setCountries(countries,countries_txt);
         CountriesSAXParser.setWorldBankData(countries,countries_xml);
-        /*CountriesDOMParser.setLifeExpectancy(countries,life_expectancy_xml);*/
+        CountriesDOMParser.setLifeExpectancy(countries,life_expectancy_xml);
         System.out.println(countries.report());
 
     }

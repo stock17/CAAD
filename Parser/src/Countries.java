@@ -36,14 +36,17 @@ public class Countries {
                 c.setRegion(region);
     }
 
-    public void setIncomeLevel(String iso2code, String incomeLevel) {
+    public void setIncomeLevel(String region, String incomeLevel) {
         for(Country c: countries)
-            if (iso2code.equals(c.getIso2Code()))
+            if (region.equals(c.getRegion()))
                 c.setIncomeLevel(incomeLevel);
 
     }
 
-    public void setLifeExpectancy(String iso2code, String lifeExpectancy) {
+    public void setLifeExpectancy(String region, Double lifeExpectancy) {
+        for(Country c: countries)
+            if (region.equals(c.getRegion()))
+                c.setLifeExpectancy(lifeExpectancy);
 
     }
 

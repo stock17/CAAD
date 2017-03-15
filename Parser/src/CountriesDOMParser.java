@@ -25,6 +25,25 @@ public class CountriesDOMParser {
             e.printStackTrace();
         }
 
+        Element doc = document.getDocumentElement();
+        NodeList nodeList = doc.getChildNodes();
+
+
+        int len = nodeList.getLength();
+        for (int i = 0; i < len; i++) {
+            Node node = nodeList.item(i);
+            NodeList nl = node.getChildNodes();
+            Node node_country = nl.item(1);
+            Node node_value = nl.item(3);
+
+            String cbuffer = node_country.getTextContent();
+            String vbuffer = node_value.getTextContent();
+            Double lifeEx = 0.0;
+            if (vbuffer != null && !vbuffer.equals("")) lifeEx = Double.parseDouble(vbuffer);
+
+            countries.setLifeExpectancy(cbuffer, lifeEx);
+        }
+
         //Complete here...
         
 
